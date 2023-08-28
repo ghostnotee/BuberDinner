@@ -17,14 +17,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requests", "Requests", "{EA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentication", "{4AC2DBC6-80A6-4324-8C31-FC015FCBCC3F}"
 	ProjectSection(SolutionItems) = preProject
-		Login.http = Login.http
-		Register.http = Register.http
+		Requests\Authentication\Login.http = Requests\Authentication\Login.http
+		Requests\Authentication\Register.http = Requests\Authentication\Register.http
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{A9B18C6A-D7E1-4D84-8F07-CABCD1902281}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\Api.md = Docs\Api.md
 		Docs\DomainModels.md = Docs\DomainModels.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dinners", "Dinners", "{202D7C68-4157-4BED-AD10-39B0FA8A1939}"
+	ProjectSection(SolutionItems) = preProject
+		Requests\Dinners\ListDinners.http = Requests\Dinners\ListDinners.http
 	EndProjectSection
 EndProject
 Global
@@ -59,6 +64,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4AC2DBC6-80A6-4324-8C31-FC015FCBCC3F} = {EA8F578F-C6AC-4EC2-9E38-D6AF31169C1A}
+		{202D7C68-4157-4BED-AD10-39B0FA8A1939} = {EA8F578F-C6AC-4EC2-9E38-D6AF31169C1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E8EC05AC-D996-45FD-A7CF-2B38B2463746}
