@@ -1,0 +1,7 @@
+@host=https://localhost:7214
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhNjU0MDIzZS1hNGJhLTRlZTMtODg5ZC1hOGJlMTBhZmE1NjUiLCJnaXZlbl9uYW1lIjoiR2hvc3QiLCJmYW1pbHlfbmFtZSI6Ik5vdGUiLCJqdGkiOiI2NmRiOWUwMi0wMDJkLTRjNTUtYmU4Ny0zOGQwNWMxMTU4NDMiLCJleHAiOjE2OTMyNjM2MjAsImlzcyI6IkJ1YmVyRGlubmVyIiwiYXVkIjoiQnViZXJEaW5uZXIifQ.WviDkfCcYXOpYscMyH0QEjcHnUZkO_SISL_V-5lEb8U
+
+
+
+GET {{host}}/dinners
+Authorization: Bearer {{token}}
