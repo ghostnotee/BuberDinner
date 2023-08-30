@@ -22,10 +22,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentic
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{A9B18C6A-D7E1-4D84-8F07-CABCD1902281}"
-	ProjectSection(SolutionItems) = preProject
-		Docs\Api.md = Docs\Api.md
-		Docs\DomainModels.md = Docs\DomainModels.md
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dinners", "Dinners", "{202D7C68-4157-4BED-AD10-39B0FA8A1939}"
 	ProjectSection(SolutionItems) = preProject
@@ -35,6 +31,18 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainModels", "DomainModels", "{230D540D-03E8-4BD8-A7B3-4C767D75189E}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\DomainModels\Aggregates.Menu.md = Docs\DomainModels\Aggregates.Menu.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{EBD02F76-A782-4078-8574-FF4061EA4EA2}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\Api\Api.Auth.md = Docs\Api\Api.Auth.md
+		Docs\Api\Api.Menu.md = Docs\Api\Api.Menu.md
+		Docs\Api\DomainModels.md = Docs\Api\DomainModels.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Menus", "Menus", "{70126344-D388-4884-9A6D-3C06566B3F14}"
+	ProjectSection(SolutionItems) = preProject
+		Requests\Menus\CreateMenu.http = Requests\Menus\CreateMenu.http
 	EndProjectSection
 EndProject
 Global
@@ -71,6 +79,8 @@ Global
 		{4AC2DBC6-80A6-4324-8C31-FC015FCBCC3F} = {EA8F578F-C6AC-4EC2-9E38-D6AF31169C1A}
 		{202D7C68-4157-4BED-AD10-39B0FA8A1939} = {EA8F578F-C6AC-4EC2-9E38-D6AF31169C1A}
 		{230D540D-03E8-4BD8-A7B3-4C767D75189E} = {A9B18C6A-D7E1-4D84-8F07-CABCD1902281}
+		{EBD02F76-A782-4078-8574-FF4061EA4EA2} = {A9B18C6A-D7E1-4D84-8F07-CABCD1902281}
+		{70126344-D388-4884-9A6D-3C06566B3F14} = {EA8F578F-C6AC-4EC2-9E38-D6AF31169C1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E8EC05AC-D996-45FD-A7CF-2B38B2463746}
