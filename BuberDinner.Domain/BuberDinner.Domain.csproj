@@ -10,4 +10,12 @@
     <PackageReference Include="ErrorOr" Version="1.2.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DinnerAggregate\" />
+    <Folder Include="GuestAggregate\" />
+    <Folder Include="HostAggregate\" />
+    <Folder Include="MenuReviewAggregate\" />
+    <Folder Include="BillAggregate\" />
+  </ItemGroup>
+
 </Project>
