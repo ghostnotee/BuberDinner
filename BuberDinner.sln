@@ -30,7 +30,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dinners", "Dinners", "{202D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainModels", "DomainModels", "{230D540D-03E8-4BD8-A7B3-4C767D75189E}"
 	ProjectSection(SolutionItems) = preProject
+		Docs\DomainModels\Aggregates.Bill.md = Docs\DomainModels\Aggregates.Bill.md
+		Docs\DomainModels\Aggregates.Dinner.md = Docs\DomainModels\Aggregates.Dinner.md
+		Docs\DomainModels\Aggregates.Guest.md = Docs\DomainModels\Aggregates.Guest.md
+		Docs\DomainModels\Aggregates.Host.md = Docs\DomainModels\Aggregates.Host.md
 		Docs\DomainModels\Aggregates.Menu.md = Docs\DomainModels\Aggregates.Menu.md
+		Docs\DomainModels\Aggregates.MenuReview.md = Docs\DomainModels\Aggregates.MenuReview.md
+		Docs\DomainModels\Aggregates.User.md = Docs\DomainModels\Aggregates.User.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{EBD02F76-A782-4078-8574-FF4061EA4EA2}"
