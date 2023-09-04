@@ -11,10 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DinnerAggregate\" />
+    <Folder Include="DinnerAggregate\Entities\" />
     <Folder Include="GuestAggregate\" />
-    <Folder Include="HostAggregate\" />
-    <Folder Include="MenuReviewAggregate\" />
     <Folder Include="BillAggregate\" />
   </ItemGroup>
 
