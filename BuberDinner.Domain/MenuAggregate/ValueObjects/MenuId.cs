@@ -11,6 +11,7 @@ public sealed class MenuId : ValueObject
         Value = value;
     }
     public static MenuId CreateUnique() => new(Guid.NewGuid());
+    public static MenuId Create(Guid menuId) => new(menuId);
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;

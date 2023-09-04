@@ -9,10 +9,10 @@ public sealed class HostId : ValueObject
     {
         Value = value;
     }
-    
+
     public static HostId CreateUnique() => new(Guid.NewGuid());
 
-    public static HostId Create(string hostId) => new(Guid.Parse(hostId));
+    public static HostId Create(Guid hostId) => new(hostId);
 
     public override IEnumerable<object> GetEqualityComponents()
     {
