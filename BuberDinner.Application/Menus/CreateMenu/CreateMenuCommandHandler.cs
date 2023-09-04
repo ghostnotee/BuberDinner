@@ -1,4 +1,5 @@
-﻿using BuberDinner.Domain.HostAggregate.ValueObjects;
+﻿using BuberDinner.Application.Common.Interfaces.Persistence;
+using BuberDinner.Domain.HostAggregate.ValueObjects;
 using BuberDinner.Domain.Menu;
 using BuberDinner.Domain.Menu.Entities;
 using ErrorOr;
@@ -7,8 +8,17 @@ using MediatR;
 namespace BuberDinner.Application.Menus.CreateMenu;
 public class CreateMenuCommandHandler : IRequestHandler<CreateMenuCommand, ErrorOr<Menu>>
 {
-    public Task<ErrorOr<Menu>> Handle(CreateMenuCommand request, CancellationToken cancellationToken)
+    private readonly IMenuRepository _menuRepository;
+
+    public CreateMenuCommandHandler(IMenuRepository menuRepository)
     {
+        _menuRepository = menuRepository;
+    }
+
+    public async Task<ErrorOr<Menu>> Handle(CreateMenuCommand request, CancellationToken cancellationToken)
+    {
+        await Task.CompletedTask;
+
         // Create Menu
         var menu = Menu.Create(
             request.Name,
@@ -21,9 +31,10 @@ public class CreateMenuCommandHandler : IRequestHandler<CreateMenuCommand, Error
                     item.Name,
                     item.Description)))));
         // Persist Menu
+        _menuRepository.Add(menu);
 
-            // Return Menu
+        // Return Menu
 
-        return default!;
+        return menu;
     }
 }
