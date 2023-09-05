@@ -17,4 +17,6 @@ public class MenuSectionId : ValueObject
     {
         yield return Value;
     }
+
+    private MenuSectionId() { }
 }

@@ -16,4 +16,6 @@ public sealed class MenuItemId : ValueObject
     {
         yield return Value;
     }
+
+    private MenuItemId() { }
 }
