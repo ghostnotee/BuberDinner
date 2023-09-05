@@ -3,7 +3,7 @@
 namespace BuberDinner.Domain.Menu.ValueObjects;
 public class MenuSectionId : ValueObject
 {
-    public Guid Value { get; }
+    public Guid Value { get; private set; }
 
     private MenuSectionId(Guid value)
     {
@@ -11,9 +11,12 @@ public class MenuSectionId : ValueObject
     }
 
     public static MenuSectionId CreateUnique() => new(Guid.NewGuid());
+    public static MenuSectionId Create(Guid menuSectionId) => new(menuSectionId);
 
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;
     }
+
+    private MenuSectionId() { }
 }

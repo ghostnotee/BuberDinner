@@ -21,20 +21,19 @@ public class CreateMenuCommandHandler : IRequestHandler<CreateMenuCommand, Error
 
         // Create Menu
         var menu = Menu.Create(
-            request.Name,
-            request.Description,
-            HostId.Create(request.HostId),
-            request.Sections.ConvertAll(section => MenuSection.Create(
-                section.Name,
-                section.Description,
-                section.Items.ConvertAll(item => MenuItem.Create(
-                    item.Name,
-                    item.Description)))));
+            hostId: HostId.Create(Guid.Parse(request.HostId)),
+            name: request.Name,
+            description: request.Description,
+            sections: request.Sections.ConvertAll(sections => MenuSection.Create(
+                name: sections.Name,
+                description: sections.Description,
+                menuItems: sections.Items.ConvertAll(items => MenuItem.Create(
+                    name: items.Name,
+                    description: items.Description)))));
         // Persist Menu
         _menuRepository.Add(menu);
 
         // Return Menu
-
         return menu;
     }
 }
