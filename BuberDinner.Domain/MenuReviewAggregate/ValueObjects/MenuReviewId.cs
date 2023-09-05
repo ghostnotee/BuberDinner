@@ -3,7 +3,7 @@
 namespace BuberDinner.Domain.MenuReviewAggregate.ValueObjects;
 public sealed class MenuReviewId : ValueObject
 {
-    public Guid Value { get; }
+    public Guid Value { get; private set; }
 
     private MenuReviewId(Guid value)
     {

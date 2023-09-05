@@ -3,7 +3,7 @@
 namespace BuberDinner.Domain.HostAggregate.ValueObjects;
 public sealed class HostId : ValueObject
 {
-    public Guid Value { get; }
+    public Guid Value { get; private set; }
 
     private HostId(Guid value)
     {

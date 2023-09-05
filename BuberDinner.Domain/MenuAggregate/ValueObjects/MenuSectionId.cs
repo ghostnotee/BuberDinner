@@ -3,7 +3,7 @@
 namespace BuberDinner.Domain.Menu.ValueObjects;
 public class MenuSectionId : ValueObject
 {
-    public Guid Value { get; }
+    public Guid Value { get; private set; }
 
     private MenuSectionId(Guid value)
     {
