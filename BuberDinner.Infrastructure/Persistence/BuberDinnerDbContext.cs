@@ -1,4 +1,4 @@
-﻿using BuberDinner.Domain.Menu;
+﻿using BuberDinner.Domain.MenuAggregate;
 using Microsoft.EntityFrameworkCore;
 
 namespace BuberDinner.Infrastructure.Persistence;

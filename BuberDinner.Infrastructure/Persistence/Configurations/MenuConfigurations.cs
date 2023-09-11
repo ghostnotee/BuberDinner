@@ -1,7 +1,7 @@
 ﻿using BuberDinner.Domain.HostAggregate.ValueObjects;
-using BuberDinner.Domain.Menu;
 using BuberDinner.Domain.Menu.Entities;
 using BuberDinner.Domain.Menu.ValueObjects;
+using BuberDinner.Domain.MenuAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

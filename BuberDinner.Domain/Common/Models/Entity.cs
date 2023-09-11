@@ -1,7 +1,10 @@
 ﻿namespace BuberDinner.Domain.Common.Models;
-public abstract class Entity<TId> : IEquatable<Entity<TId>> where TId : notnull
+public abstract class Entity<TId> : IEquatable<Entity<TId>> where TId : ValueObject
 {
+    private readonly List<IDomainEvent> _domainEvents = new();
+
     public TId Id { get; protected set; }
+    public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
 
     protected Entity(TId id)
     {

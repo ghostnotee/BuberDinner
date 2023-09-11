@@ -6,7 +6,7 @@ using BuberDinner.Domain.Menu.Entities;
 using BuberDinner.Domain.Menu.ValueObjects;
 using BuberDinner.Domain.MenuReviewAggregate.ValueObjects;
 
-namespace BuberDinner.Domain.Menu;
+namespace BuberDinner.Domain.MenuAggregate;
 public sealed class Menu : AggregateRoot<MenuId, Guid>
 {
     private readonly List<MenuSection> _sections = new();
