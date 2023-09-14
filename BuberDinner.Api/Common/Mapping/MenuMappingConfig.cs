@@ -1,7 +1,7 @@
 ﻿using BuberDinner.Application.Menus.CreateMenu;
 using BuberDinner.Contracts.Menus;
-using BuberDinner.Domain.Menu;
 using BuberDinner.Domain.Menu.Entities;
+using BuberDinner.Domain.MenuAggregate;
 using Mapster;
 
 namespace BuberDinner.Api.Common.Mapping;
