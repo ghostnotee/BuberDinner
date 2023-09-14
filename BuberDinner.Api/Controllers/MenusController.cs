@@ -1,4 +1,4 @@
-﻿using BuberDinner.Application.Menus.CreateMenu;
+﻿using BuberDinner.Application.Menus.Commands;
 using BuberDinner.Contracts.Menus;
 using MapsterMapper;
 using MediatR;

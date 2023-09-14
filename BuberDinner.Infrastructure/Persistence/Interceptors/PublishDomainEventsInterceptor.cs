@@ -45,7 +45,7 @@ public class PublishDomainEventsInterceptor : SaveChangesInterceptor
         // Publish domai events
         foreach (var domainEvent in domainEvents)
         {
-            _mediator.Publish(domainEvent);
+            await _mediator.Publish(domainEvent);
         }
 
     }

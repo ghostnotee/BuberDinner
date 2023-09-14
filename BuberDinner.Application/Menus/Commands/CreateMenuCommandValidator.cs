@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace BuberDinner.Application.Menus.CreateMenu;
+namespace BuberDinner.Application.Menus.Commands;
 public class CreateMenuCommandValidator : AbstractValidator<CreateMenuCommand>
 {
     public CreateMenuCommandValidator()
