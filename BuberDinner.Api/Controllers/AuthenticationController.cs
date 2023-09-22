@@ -1,9 +1,7 @@
 ﻿using BuberDinner.Application.Authentication.Commands.Register;
-using BuberDinner.Application.Authentication.Common;
 using BuberDinner.Application.Authentication.Queries.Login;
 using BuberDinner.Contracts.Authentication;
 using BuberDinner.Domain.Common.Errors;
-using ErrorOr;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -15,10 +13,10 @@ namespace BuberDinner.Api.Controllers;
 [AllowAnonymous]
 public class AuthenticationController : ApiController
 {
-    private readonly IMediator _mediator;
+    private readonly ISender _mediator;
     private readonly IMapper _mapper;
 
-    public AuthenticationController(IMediator mediator, IMapper mapper)
+    public AuthenticationController(ISender mediator, IMapper mapper)
     {
         _mediator = mediator;
         _mapper = mapper;
@@ -28,7 +26,7 @@ public class AuthenticationController : ApiController
     public async Task<IActionResult> Register(RegisterRequest request)
     {
         var command = _mapper.Map<RegisterCommand>(request);
-        ErrorOr<AuthenticationResult> authResult = await _mediator.Send(command);
+        var authResult = await _mediator.Send(command);
 
         return authResult.Match(authResult => Ok(_mapper.Map<AuthenticationResponse>(authResult)), Problem);
     }
@@ -38,7 +36,7 @@ public class AuthenticationController : ApiController
     {
 
         var query = new LoginQuery(request.Email, request.Password);
-        var authResult = await _mediator.Send(query);    
+        var authResult = await _mediator.Send(query);
 
         if (authResult.IsError && authResult.FirstError == Errors.Authentication.InvalidCredentials)
             return Problem(statusCode: StatusCodes.Status401Unauthorized, title: authResult.FirstError.Description);

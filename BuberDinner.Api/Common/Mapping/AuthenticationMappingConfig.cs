@@ -13,7 +13,6 @@ public class AuthenticationMappingConfig : IRegister
         config.NewConfig<RegisterRequest, RegisterCommand>();
         config.NewConfig<LoginRequest, LoginQuery>();
         config.NewConfig<AuthenticationResult, AuthenticationResponse>()
-            .Map(dest => dest.Token, src => src.Token)
-            .Map(dest => dest, src => src.User);
+            .MapWith(src => new AuthenticationResponse(src.User.Id.Value, src.User.FirstName, src.User.LastName, src.User.Email, src.Token));
     }
 }

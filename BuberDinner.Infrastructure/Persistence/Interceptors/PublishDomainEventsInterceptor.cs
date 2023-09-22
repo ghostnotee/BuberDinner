@@ -28,13 +28,13 @@ public class PublishDomainEventsInterceptor : SaveChangesInterceptor
 
     private async Task PublishDomainEvents(DbContext? context)
     {
-        if (context is null)
-        {
-            return;
-        }
+        if (context is null) return;
 
         // Get hold of all the various entities
-        var entitiesWithDomainEvents = context.ChangeTracker.Entries<IHasDomainEvents>().Where(entry => entry.Entity.DomainEvents.Any()).Select(entry => entry.Entity).ToList();
+        var entitiesWithDomainEvents = context.ChangeTracker.Entries<IHasDomainEvents>()
+            .Where(entry => entry.Entity.DomainEvents.Any())
+            .Select(entry => entry.Entity)
+            .ToList();
 
         // Get hold of all the various domain events
         var domainEvents = entitiesWithDomainEvents.SelectMany(e => e.DomainEvents).ToList();
@@ -42,11 +42,10 @@ public class PublishDomainEventsInterceptor : SaveChangesInterceptor
         // Clear domain events
         entitiesWithDomainEvents.ForEach(entity => entity.ClearDomainEvents());
 
-        // Publish domai events
+        // Publish domain events
         foreach (var domainEvent in domainEvents)
         {
-            _mediator.Publish(domainEvent);
+            await _mediator.Publish(domainEvent);
         }
-
     }
 }

@@ -12,7 +12,7 @@ public sealed class User : AggregateRoot<UserId, Guid>
     public DateTime CreatedDateTime { get; private set; }
     public DateTime UpdatedDateTime { get; private set; }
 
-    private User(UserId id, string firstName, string lastName, string email, string password, DateTime createdDateTime, DateTime updatedDateTime) : base(id)
+    private User(UserId userId, string firstName, string lastName, string email, string password, DateTime createdDateTime, DateTime updatedDateTime) : base(userId)
     {
         FirstName = firstName;
         LastName = lastName;
