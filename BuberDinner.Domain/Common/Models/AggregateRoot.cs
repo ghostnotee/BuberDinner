@@ -2,7 +2,7 @@
 public abstract class AggregateRoot<TId, TIdType> : Entity<TId> where TId : AggregateRootId<TIdType>
 {
     public new AggregateRootId<TIdType> Id { get; protected set; }
-    public AggregateRoot(TId id)
+    protected AggregateRoot(TId id)
     {
         Id = id;
     }
