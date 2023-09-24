@@ -16,7 +16,7 @@ public class MenuSection : Entity<MenuSectionId>
         Description = description;
         _items = menuItems;
     }
-    public static MenuSection Create(string name, string description, List<MenuItem>? menuItems = null) => new(MenuSectionId.CreateUnique(), name, description, menuItems);
+    public static MenuSection Create(string name, string description, List<MenuItem> menuItems) => new(MenuSectionId.CreateUnique(), name, description, menuItems);
 
 #pragma warning disable CS8618
     private MenuSection() { }

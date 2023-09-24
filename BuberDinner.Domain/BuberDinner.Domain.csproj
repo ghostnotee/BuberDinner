@@ -8,12 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="ErrorOr" Version="1.2.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DinnerAggregate\Entities\" />
-    <Folder Include="GuestAggregate\" />
-    <Folder Include="BillAggregate\" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
   </ItemGroup>
 
 </Project>

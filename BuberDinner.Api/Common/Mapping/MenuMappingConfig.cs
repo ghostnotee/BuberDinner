@@ -1,7 +1,7 @@
-﻿using BuberDinner.Application.Menus.CreateMenu;
+﻿using BuberDinner.Application.Menus.Commands;
 using BuberDinner.Contracts.Menus;
-using BuberDinner.Domain.Menu;
 using BuberDinner.Domain.Menu.Entities;
+using BuberDinner.Domain.MenuAggregate;
 using Mapster;
 
 namespace BuberDinner.Api.Common.Mapping;
@@ -15,7 +15,7 @@ public class MenuMappingConfig : IRegister
             .Map(dest => dest, src => src.Request);
 
         config.NewConfig<Menu, MenuResponse>()
-            .Map(dest => dest.Id, src => src.Id.Value)
+            .Map(dest => dest.Id, src => src.Id.ToString())
             .Map(dest => dest.AverageRating, src => src.AverageRating.Value)
             .Map(dest => dest.HostId, src => src.HostId.Value)
             .Map(dest => dest.DinnerIds, src => src.DinnerIds.Select(dinnerId => dinnerId.Value))

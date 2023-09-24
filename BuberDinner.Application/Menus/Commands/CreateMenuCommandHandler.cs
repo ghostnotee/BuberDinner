@@ -1,11 +1,11 @@
 ﻿using BuberDinner.Application.Common.Interfaces.Persistence;
 using BuberDinner.Domain.HostAggregate.ValueObjects;
-using BuberDinner.Domain.Menu;
 using BuberDinner.Domain.Menu.Entities;
+using BuberDinner.Domain.MenuAggregate;
 using ErrorOr;
 using MediatR;
 
-namespace BuberDinner.Application.Menus.CreateMenu;
+namespace BuberDinner.Application.Menus.Commands;
 public class CreateMenuCommandHandler : IRequestHandler<CreateMenuCommand, ErrorOr<Menu>>
 {
     private readonly IMenuRepository _menuRepository;

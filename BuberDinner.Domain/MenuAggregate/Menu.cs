@@ -4,9 +4,10 @@ using BuberDinner.Domain.DinnerAggregate.ValueObjects;
 using BuberDinner.Domain.HostAggregate.ValueObjects;
 using BuberDinner.Domain.Menu.Entities;
 using BuberDinner.Domain.Menu.ValueObjects;
+using BuberDinner.Domain.MenuAggregate.Events;
 using BuberDinner.Domain.MenuReviewAggregate.ValueObjects;
 
-namespace BuberDinner.Domain.Menu;
+namespace BuberDinner.Domain.MenuAggregate;
 public sealed class Menu : AggregateRoot<MenuId, Guid>
 {
     private readonly List<MenuSection> _sections = new();
@@ -41,12 +42,9 @@ public sealed class Menu : AggregateRoot<MenuId, Guid>
 
     public static Menu Create(HostId hostId, string name, string description, List<MenuSection>? sections = null)
     {
-        return new(MenuId.CreateUnique(),
-                   hostId,
-                   name,
-                   description,
-                   AverageRating.CreateNew(0),
-                   sections ?? new());
+        Menu menu = new(MenuId.CreateUnique(), hostId, name, description, AverageRating.CreateNew(0), sections ?? new());
+        menu.AddDomainEvent(new MenuCreated(menu));
+        return menu;
     }
 
 #pragma warning disable CS8618
